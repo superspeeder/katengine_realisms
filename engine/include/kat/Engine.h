@@ -45,7 +45,7 @@ namespace kat {
 
         time_point startTime, lastFrame;
         duration lastFrameTime;
-        size_t frameCount;
+        size_t frameCount = 0;
         double lastFpsExact;
         double lastFpsSmooth;
     };
@@ -107,11 +107,11 @@ namespace kat {
         void cleanupApp();
 
         friend class Engine;
+        Engine *m_Engine = nullptr;
 
         AppClock m_Clock;
 
     private:
-        Engine *m_Engine = nullptr;
         GLFWwindow* m_Window;
         bool m_Running = false;
         vk::SurfaceKHR m_Surface;

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "kat/Engine.h"
+#include <array>
 
 namespace kat {
     constexpr size_t kMaxFramesInFlight = 2;
@@ -13,6 +14,7 @@ namespace kat {
         ~Renderer();
 
         void render();
+        void cleanup();
 
     private:
 
@@ -31,6 +33,6 @@ namespace kat {
         vk::PipelineLayout m_PipelineLayout;
         std::vector<vk::Framebuffer> m_Framebuffers;
 
-
+        vk::ClearValue m_ClearValue = vk::ClearColorValue{std::array<float,4>{1.0f, 0.205f, 0.031f, 1.0f}};
     };
 }
