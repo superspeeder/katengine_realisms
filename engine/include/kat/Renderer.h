@@ -33,6 +33,6 @@ namespace kat {
         vk::PipelineLayout m_PipelineLayout;
         std::vector<vk::Framebuffer> m_Framebuffers;
 
-        vk::ClearValue m_ClearValue = vk::ClearColorValue{std::array<float,4>{1.0f, 0.205f, 0.031f, 1.0f}};
+        vk::ClearValue m_ClearValue = vk::ClearColorValue{std::array<float,4>{1.0f, 0.11f, 0.0f, 1.0f}};
     };
 }
